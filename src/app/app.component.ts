@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public votes: Observable<any[]>;
   title = 'app';
+
+  constructor(db: AngularFirestore) {
+    this.votes = db.collection('votes').valueChanges();
+  }
 }
