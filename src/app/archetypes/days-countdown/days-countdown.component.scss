@@ -1,0 +1,10 @@
+$component: '.app-days-countdown';
+
+#{$component} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: blue;
+    height: 50px;
+    width: 100%;
+}

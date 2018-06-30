@@ -1,12 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <app-header-container></app-header-container>
   <ul>
     <li *ngFor="let vote of votes | async">
         {{ vote?.user }} votes: {{ vote?.votes }}
     </li>
-</ul>
+  </ul>
 </div>
 
