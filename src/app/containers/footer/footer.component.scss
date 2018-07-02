@@ -1,0 +1,29 @@
+$component: '.app-footer';
+
+#{$component} {
+    &__navigation {
+       &__item {
+           text-decoration: none;
+           color: #3e3e3e;
+           margin-right: 2em;
+       }
+    }
+    
+    &__social {
+        display: flex;
+        align-items: center;
+
+        &__title {
+            margin-right: 1.5em;
+        }
+
+        &__item {
+            font-size: 30px;
+            margin-right: 0.5em;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}

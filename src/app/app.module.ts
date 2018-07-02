@@ -15,6 +15,8 @@ import { MainQuoteComponent } from './archetypes/main-quote/main-quote.component
 import { ContentComponent } from './containers/content/content.component';
 import { VoteComponent } from './archetypes/vote/vote.component';
 import { VotesComponent } from './containers/votes/votes.component';
+import { SubmitNameComponent } from './archetypes/submit-name/submit-name.component';
+import { FooterComponent } from './containers/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { VotesComponent } from './containers/votes/votes.component';
     MainQuoteComponent,
     ContentComponent,
     VoteComponent,
-    VotesComponent
+    VotesComponent,
+    SubmitNameComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
