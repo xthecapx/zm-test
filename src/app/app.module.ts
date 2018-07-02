@@ -13,6 +13,8 @@ import { DaysCountdownComponent } from './archetypes/days-countdown/days-countdo
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
 import { MainQuoteComponent } from './archetypes/main-quote/main-quote.component';
 import { ContentComponent } from './containers/content/content.component';
+import { VoteComponent } from './archetypes/vote/vote.component';
+import { VotesComponent } from './containers/votes/votes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ContentComponent } from './containers/content/content.component';
     DaysCountdownComponent,
     HeaderContainerComponent,
     MainQuoteComponent,
-    ContentComponent
+    ContentComponent,
+    VoteComponent,
+    VotesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+$component: '.votes-wrapper';
+$component-element: 'app-vote';
+$cards-space: 2.3em;
+
+#{$component} {
+    display: flex;
+    flex-wrap: wrap;
+
+    #{$component-element} {
+        position: relative;
+        width: calc(50% - #{$cards-space/2});
+        height: 550px;
+        background: red;
+        margin-bottom: $cards-space;
+
+        &:nth-child(2n-1) {
+            margin-right: $cards-space;
+        }
+    }
+}
+
+.title {
+    text-align: left;
+    margin: 0 0 1.1em;
+    font-size: 2.4em;
+    font-weight: 100;
+    line-height: 1;
+    letter-spacing: 1px;
+}
