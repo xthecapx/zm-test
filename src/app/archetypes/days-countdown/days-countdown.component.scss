@@ -1,0 +1,91 @@
+$component: '.app-days-countdown';
+$min-width: 10%;
+$min-width-days: 100% - $min-width;
+$transparent-white: rgba(255, 255, 255, 0.2);
+$transparent-black: rgba(0, 0, 0, 0.15);
+
+#{$component} {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+
+    &__days {
+        background: $transparent-white;
+        max-width: $min-width-days;
+        width: $min-width-days;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        margin-left: 8px;
+        font-size: 2.2em;
+        position: relative;
+
+        &__day {
+            margin-right: 10px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 19px;
+            left: -8px;
+            width: 0px;
+            height: 0px;
+            border-top: 6px solid $transparent-white;
+            border-bottom: 6px solid $transparent-white;
+            border-left: 8px solid transparent;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: -8px;
+            width: 8px;
+            height: 19px;
+            top: 31px;
+            background: $transparent-white;
+        }
+    }
+
+    &__info {
+        min-width: $min-width;
+        width: 522px;
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.15);
+        font-size: .8em;
+        color: white;
+        padding-right: 13px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 19px;
+            right: -8px;
+            width: 0px;
+            height: 0px;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 8px solid $transparent-black;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 19px;
+            top: 0;
+            right: -8px;
+            background: $transparent-white; 
+        }
+    }
+}

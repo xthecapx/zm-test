@@ -1,0 +1,19 @@
+$component: '.app-submit-name';
+
+#{$component} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 1em;
+
+    &__text {
+        font-size: 1.9em;
+    }
+
+    &__button {
+        padding: .4em 1em;
+        border: 2px solid black;
+        font-size: 1.5em;
+    }
+}
