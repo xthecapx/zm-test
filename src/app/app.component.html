@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <app-header-container></app-header-container>
+  <app-content></app-content>
   <ul>
     <li *ngFor="let vote of votes | async">
         {{ vote?.user }} votes: {{ vote?.votes }}

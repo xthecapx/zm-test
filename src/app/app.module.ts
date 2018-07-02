@@ -11,6 +11,8 @@ import { HeaderComponent } from './archetypes/header/header.component';
 import { HeaderCardComponent } from './archetypes/header-card/header-card.component';
 import { DaysCountdownComponent } from './archetypes/days-countdown/days-countdown.component';
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
+import { MainQuoteComponent } from './archetypes/main-quote/main-quote.component';
+import { ContentComponent } from './containers/content/content.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeaderContainerComponent } from './containers/header-container/header-c
     HeaderComponent,
     HeaderCardComponent,
     DaysCountdownComponent,
-    HeaderContainerComponent
+    HeaderContainerComponent,
+    MainQuoteComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
