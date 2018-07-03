@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-votes',
@@ -8,7 +10,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class VotesComponent implements OnInit {
 
-  constructor() { }
+  public posts: Observable<any[]>;
+
+  constructor(db: AngularFirestore) {
+    this.posts = db.collection('post').valueChanges();
+  }
 
   ngOnInit() {
   }

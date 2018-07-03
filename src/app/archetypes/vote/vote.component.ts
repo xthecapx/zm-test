@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-vote',
@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vote.component.scss']
 })
 export class VoteComponent implements OnInit {
-
-  constructor() { }
+  @Input() config;
 
   ngOnInit() {
   }

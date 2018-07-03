@@ -1,12 +1,12 @@
 <div class="app-vote__content">
     <div class="app-vote__result material-icons">thumb_up</div>
-    <div class="app-vote__title">Kanye West</div>
+    <div class="app-vote__title"> {{ config?.person }} </div>
     <div class="app-vote__subtitle">
       <span class="app-vote__subtitle__main">1 month ago </span> 
-      <span class="app-vote__subtitle__normal">in Entertainment</span>
+      <span class="app-vote__subtitle__normal">{{ config?.tag }}</span>
     </div>
     <div class="app-vote__description">
-      Vestibulum diam ante, porttitor o odio eget, rhoncus neque. Aenean eu velit libero.
+      {{ config?.description }}
     </div>
     <div class="app-vote__actions">
       <div class="app-vote__actions__action app-vote__actions__action--up app-vote__actions__action--active material-icons">thumb_up</div>

@@ -28,6 +28,16 @@ $thumbs_height: 80px;
             margin-bottom: 2.4em;
             display: block;
             text-decoration: underline;
+            cursor: pointer;
+
+            &__text {
+                font-size: 0.9em;
+            }
+
+            &__icon {
+                margin-right: 0.5em;
+                font-size: .8em;
+            }
         }
     
         &__question {

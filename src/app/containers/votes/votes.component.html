@@ -1,7 +1,7 @@
 
 <h2 class="title">Votes</h2>
 <div class="votes-wrapper">
-  <app-vote></app-vote>
-  <app-vote></app-vote>
-  <app-vote></app-vote>
+  <ng-container *ngFor="let post of posts | async">
+    <app-vote [config]="post"></app-vote>
+  </ng-container>
 </div>
