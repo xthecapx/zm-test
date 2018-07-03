@@ -17,6 +17,7 @@ import { VoteComponent } from './archetypes/vote/vote.component';
 import { VotesComponent } from './containers/votes/votes.component';
 import { SubmitNameComponent } from './archetypes/submit-name/submit-name.component';
 import { FooterComponent } from './containers/footer/footer.component';
+import { PostService } from './containers/votes/post.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { FooterComponent } from './containers/footer/footer.component';
     AngularFireAuthModule,
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

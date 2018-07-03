@@ -8,8 +8,9 @@
     <div class="app-vote__description">
       {{ config?.description }}
     </div>
-    <div class="app-vote__actions">
-      <div class="app-vote__actions__action app-vote__actions__action--up app-vote__actions__action--active material-icons">thumb_up</div>
+    <div class="app-vote__actions" [id]="config?.id">
+      <div class="app-vote__actions__action app-vote__actions__action--up app-vote__actions__action--active material-icons"
+           (click)="updateLikes(config)">thumb_up</div>
       <div class="app-vote__actions__action app-vote__actions__action--down material-icons">thumb_down</div>
       <div class="app-vote__actions__submit">Vote now</div>
     </div>
