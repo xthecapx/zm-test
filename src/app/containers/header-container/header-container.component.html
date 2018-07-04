@@ -1,4 +1,4 @@
-<div class="app-header-container">
+<div class="app-header-container" [style.background-image]="featured[0]?.background">
   <div class="app-header-container__content">
       <app-header></app-header>
       <ng-container *ngFor="let featured of featured$ | async">

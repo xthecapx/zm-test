@@ -1,5 +1,3 @@
-import { Timestamp } from "rxjs";
-
 export interface FeaturedPostModel {
   id?: string;
   description: string;
@@ -10,4 +8,5 @@ export interface FeaturedPostModel {
   title: string;
   closingDate: string;
   creationDate: string;
+  background: string;
 }

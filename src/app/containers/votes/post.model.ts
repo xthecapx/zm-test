@@ -6,4 +6,5 @@ export interface Post {
   likes: number;
   person: string;
   tag: string;
+  background: string;
 }

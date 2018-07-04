@@ -11,6 +11,7 @@ import { map } from "rxjs/operators";
 })
 export class HeaderContainerComponent implements OnInit {
   public featured$: Observable<FeaturedPostModel[]>;
+  public featured: FeaturedPostModel[];
 
   constructor(private headerContainerService: HeaderContainerService) {
     this.featured$ = this.headerContainerService.getFeaturedPostList().pipe(
@@ -18,10 +19,18 @@ export class HeaderContainerComponent implements OnInit {
         actions.map(a => {
           const data = a.payload.doc.data() as FeaturedPostModel;
           const id = a.payload.doc.id;
-          return { id, ...data };
+          return {
+            id,
+            ...data,
+            background: `url(${a.payload.doc.data().background})`
+          };
         })
       )
     );
+
+    this.featured$.subscribe(post => {
+      this.featured = post;
+    });
   }
 
   ngOnInit() {}

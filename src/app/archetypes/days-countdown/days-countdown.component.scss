@@ -63,7 +63,7 @@ $transparent-black: rgba(0, 0, 0, 0.3);
     align-items: center;
     display: flex;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    background: $transparent-black;
     font-size: 0.8em;
     color: white;
     padding-right: 13px;
