@@ -1,39 +1,40 @@
-@import './src/vars.scss';
+@import "./src/vars.scss";
 
-$component: '.app-header';
+$component: ".app-header";
 
 #{$component} {
+  align-items: center;
+  display: flex;
+  height: 115px;
+  text-align: center;
+  max-width: $max-width;
+  margin: 0 auto;
+  color: white;
+  width: 100%;
+
+  &__title {
+    flex: 1;
+    text-align: left;
+    padding-left: 1em;
+  }
+
+  &__menu {
     align-items: center;
     display: flex;
-    height: 115px;
-    text-align: center;
-    max-width: $max-width;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: flex-end;
+    flex: 2;
+    list-style: none;
 
-    &__title {
-        flex: 1;
-        text-align: left;
-        padding-left: 1em;
+    &__option {
+      padding: 0.5em 1.6em;
     }
+  }
 
-    &__menu {
-        align-items: center;
-        display: flex;
-        justify-content: flex-end;
-        flex: 2;
-        list-style: none;
+  &__search-box {
+    padding: 0.6em 1em 0em;
 
-        &__option {
-            padding: 0.5em 1.6em;
-        }
+    &__icon {
+      font-size: 40px;
     }
-
-    &__search-box {
-        padding: 0.6em 1em 0em;
-
-        &__icon {
-            font-size: 40px;
-        }
-    }
+  }
 }

@@ -14,6 +14,7 @@ $thumbs_height: 80px;
   &__content {
     background: rgba(0, 0, 0, 0.2);
     padding: 2em 2em 1.8em;
+    color: white;
 
     &__title {
       font-size: 3.6em;
@@ -63,6 +64,7 @@ $thumbs_height: 80px;
       display: flex;
       justify-content: center;
       cursor: pointer;
+      color: white;
 
       &--bg-green {
         background: $background-green-transparent;
