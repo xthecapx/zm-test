@@ -1,4 +1,5 @@
 @import "./src/vars.scss";
+@import "./src/mixins.scss";
 
 $component: ".app-header";
 
@@ -10,6 +11,11 @@ $component: ".app-header";
   margin: 0 auto;
   color: white;
   width: 100%;
+  flex-direction: column;
+
+  @include for-size(tablet-portrait-up) {
+    flex-direction: row;
+  }
 
   &__title {
     flex: 1;
@@ -20,16 +26,36 @@ $component: ".app-header";
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    flex: 2;
+    flex: 1;
     list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include for-size(tablet-portrait-up) {
+      padding: 0.5em 1.6em;
+      flex: 2;
+    }
 
     &__option {
-      padding: 0.5em 1.6em;
+      padding: 0.5em 0.1em;
+      cursor: pointer;
+
+      @include for-size(tablet-portrait-up) {
+        padding: 0.5em 1.6em;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
     }
   }
 
   &__search-box {
     padding: 0.6em 1em 0em;
+
+    @include for-size(phone-only) {
+      display: none;
+    }
 
     &__icon {
       font-size: 40px;

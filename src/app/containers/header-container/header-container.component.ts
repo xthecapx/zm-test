@@ -11,7 +11,7 @@ import { map } from "rxjs/operators";
 })
 export class HeaderContainerComponent implements OnInit {
   public featured$: Observable<FeaturedPostModel[]>;
-  public featured: FeaturedPostModel[];
+  public featured: FeaturedPostModel;
 
   constructor(private headerContainerService: HeaderContainerService) {
     this.featured$ = this.headerContainerService.getFeaturedPostList().pipe(
@@ -29,7 +29,7 @@ export class HeaderContainerComponent implements OnInit {
     );
 
     this.featured$.subscribe(post => {
-      this.featured = post;
+      this.featured = post[0];
     });
   }
 
