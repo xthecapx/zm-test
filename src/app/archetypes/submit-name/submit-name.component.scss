@@ -1,3 +1,5 @@
+@import "./src/mixins.scss";
+
 $component: ".app-submit-name";
 
 #{$component} {
@@ -24,15 +26,23 @@ $component: ".app-submit-name";
   }
 
   &__text {
-    font-size: 1.9em;
+    font-size: 1em;
     z-index: 300;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 1.9em;
+    }
   }
 
   &__button {
     padding: 0.4em 1em;
     border: 2px solid black;
-    font-size: 1.5em;
+    font-size: 1.1em;
     margin-right: 0.5em;
     z-index: 300;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 1.5em;
+    }
   }
 }

@@ -1,15 +1,21 @@
 @import "./src/vars.scss";
+@import "./src/mixins.scss";
 
 $component: ".app-header-card";
 $thumbs_height: 80px;
 
 #{$component} {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 39%;
-  max-height: 500px;
   text-align: left;
+  width: 70%;
+  margin: 0 auto;
+
+  @include for-size(tablet-landscape-up) {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 39%;
+    max-height: 500px;
+  }
 
   &__content {
     background: rgba(0, 0, 0, 0.5);
@@ -17,8 +23,12 @@ $thumbs_height: 80px;
     color: white;
 
     &__title {
-      font-size: 3.6em;
+      font-size: 2.6em;
       letter-spacing: 1.5px;
+
+      @include for-size(tablet-landscape-up) {
+        font-size: 3.6em;
+      }
     }
 
     &__description {
