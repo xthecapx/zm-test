@@ -1,26 +1,45 @@
 <div class="app-vote__content">
     <div class="app-vote__result material-icons">thumb_up</div>
-    <div class="app-vote__title">Kanye West</div>
+    <div class="app-vote__title"> {{ config?.person }} </div>
     <div class="app-vote__subtitle">
-      <span class="app-vote__subtitle__main">1 month ago </span> 
-      <span class="app-vote__subtitle__normal">in Entertainment</span>
+      <span class="app-vote__subtitle__main">1 month ago </span>
+      <span class="app-vote__subtitle__normal">{{ config?.tag }}</span>
     </div>
     <div class="app-vote__description">
-      Vestibulum diam ante, porttitor o odio eget, rhoncus neque. Aenean eu velit libero.
+        <ng-container *ngIf="!userVote">
+          {{ config?.description }}
+        </ng-container>
+        <ng-container *ngIf="userVote">
+          Thank you for voting!
+        </ng-container>
     </div>
-    <div class="app-vote__actions">
-      <div class="app-vote__actions__action app-vote__actions__action--up app-vote__actions__action--active material-icons">thumb_up</div>
-      <div class="app-vote__actions__action app-vote__actions__action--down material-icons">thumb_down</div>
-      <div class="app-vote__actions__submit">Vote now</div>
+    <div class="app-vote__actions" [id]="config?.id">
+      <ng-container *ngIf="userVote">
+          <div class="app-vote__actions__submit"
+               (click)="voteAgain()">Vote again</div>
+      </ng-container>
+      <ng-container *ngIf="!userVote">
+          <div class="app-vote__actions__action app-vote__actions__action--up  material-icons"
+               (click)="actionClicked('likes')"
+               [ngClass]="{'app-vote__actions__action--active': active === 'likes'}">thumb_up</div>
+          <div class="app-vote__actions__action app-vote__actions__action--down material-icons"
+               (click)="actionClicked('dislikes')"
+               [ngClass]="{'app-vote__actions__action--active': active === 'dislikes'}">thumb_down</div>
+          <div class="app-vote__actions__submit"
+                (click)="vote()">Vote now</div>
+      </ng-container>
+
     </div>
 </div>
 <div class="app-vote__preview">
-  <div class="app-vote__preview__item app-vote__preview__item--up">
-    <div class="app-vote__preview__item__icon material-icons">thumb_up</div>
-    <div class="app-vote__actions__item__results">64%</div>
+  <div class="app-vote__preview__item app-vote__preview__item--up" [style.width.%]="percentages.likes">
+    <div class="app-vote__preview__item__icon material-icons"
+         (click)="updatePostRate('likes')">thumb_up</div>
+    <div class="app-vote__actions__item__results">{{ percentages.likes | number:'1.2-2' }}%</div>
   </div>
-  <div class="app-vote__preview__item app-vote__preview__item--down">
-      <div class="app-vote__actions__item__results">36%</div>
-      <div class="app-vote__preview__item__icon material-icons">thumb_down</div>
+  <div class="app-vote__preview__item app-vote__preview__item--down" [style.width.%]="percentages.dislikes">
+      <div class="app-vote__actions__item__results">{{ percentages.dislikes | number:'1.2-2' }}%</div>
+      <div class="app-vote__preview__item__icon material-icons"
+           (click)="updatePostRate('dislikes')">thumb_down</div>
     </div>
 </div>

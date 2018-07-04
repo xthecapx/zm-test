@@ -1,37 +1,45 @@
-$component: '.app-main-quote';
+@import "./src/vars.scss";
+@import "./src/mixins.scss";
+
+$component: ".app-main-quote";
 $thumbs_height: 80px;
 
 #{$component} {
-    display: flex;
-    align-items: center;
-    background: #d2d2d2;
-    padding: 1.2em 1em;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  background: $light-gray;
+  padding: 1.2em 1em;
+  margin-bottom: 40px;
 
-    &__left-side {
-        width: 37%;
+  &__left-side {
+    flex: 1;
 
-        &__top {
-            font-size: 1.4em;
-        }
-
-        &__bold {
-            display: block;
-            font-size: 2.3em;
-            font-weight: bold;
-            line-height: 0.8;
-        }
+    &__top {
+      font-size: 1.4em;
     }
 
-    &__description {
-        font-weight: 100;
-        letter-spacing: 0.3px;
-        text-align: left;
-        font-size: 0.9em;
-        line-height: 1.6;
+    &__bold {
+      display: block;
+      font-size: 2.3em;
+      font-weight: bold;
+      line-height: 0.8;
     }
+  }
 
-    &__close {
-        width: 30px;
+  &__description {
+    font-weight: 100;
+    letter-spacing: 0.3px;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.6;
+    flex: 1;
+
+    @include for-size(tablet-landscape-up) {
+      flex: 3;
     }
+  }
+
+  &__close {
+    width: 30px;
+  }
 }

@@ -1,121 +1,130 @@
-$component: '.app-vote';
+@import "./src/vars.scss";
+
+$component: ".app-vote";
 
 #{$component} {
-    &__content {
-        position: absolute;
-        bottom: 9%;
-        left: 0;
-        height: 250px;
-        background: rgba(0, 0, 0, 0.25);
-        padding: 0 2.5em;
-        color: white;
-        text-align: left;
+  &__content {
+    position: absolute;
+    bottom: 9%;
+    left: 0;
+    height: 250px;
+    padding: 0 2.5em;
+    color: white;
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  &__result {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $background-green;
+  }
+
+  &__title {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 0.1em;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    &__main {
+      font-weight: bold;
     }
 
-    &__result {
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: green;
+    &__normal {
+      font-weight: lighter;
+    }
+  }
+
+  &__description {
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-bottom: 17px;
+    padding-left: 0.25em;
+  }
+
+  &__actions {
+    display: flex;
+    padding-left: 0.25em;
+    align-items: center;
+
+    &__action {
+      width: 33px;
+      height: 33px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+
+      &--up {
+        background: $background-green;
+      }
+
+      &--down {
+        background: $background-orange;
+      }
+
+      &--active {
+        border: 2px solid white;
+      }
     }
 
-    &__title {
-        height: 90px;
-        display: flex;
-        align-items: flex-end;
-        font-size: 2.8em;
-        letter-spacing: 1px;
+    &__submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      padding: 0 1em;
+      border: 1px solid white;
+      cursor: pointer;
     }
+  }
 
-    &__subtitle {
-        font-size: 12px;
-        margin-bottom: 10px;
+  &__preview {
+    display: flex;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
-        &__main {
-            font-weight: bold;
-        }
+    &__item {
+      display: flex;
+      min-width: 20%;
+      align-items: center;
+      color: white;
+      padding: 0 1em;
+      font-size: 1.7em;
+      font-weight: 100;
+      cursor: pointer;
 
-        &__normal {
-            font-weight: lighter;
-        }
+      &--up {
+        justify-content: flex-start;
+        background: $background-green-transparent;
+      }
+
+      &--down {
+        justify-content: flex-end;
+        background: $background-orange-transparent;
+      }
     }
-
-    &__description {
-        font-weight: lighter;
-        letter-spacing: 0.5px;
-        line-height: 1.4;
-        margin-bottom: 17px;
-        padding-left: 0.25em;
-    }
-
-    &__actions {
-        display: flex;
-        padding-left: 0.25em;
-        align-items: center;
-
-        &__action {
-            width: 33px;
-            height: 33px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-right: 10px;
-
-            &--up {
-                background: seagreen;
-            }
-
-            &--down {
-                background: coral;
-            }
-
-            &--active {
-                border: 2px solid white;
-            }
-        }
-
-        &__submit {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 38px;
-            padding: 0 1em;
-            border: 1px solid white;
-        }
-    }
-
-    &__preview {
-        display: flex;
-        height: 50px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-
-        &__item {
-            display: flex;
-            flex: 1;
-            align-items: center;
-            color: white;
-            padding: 0 1em;
-            font-size: 1.7em;
-            font-weight: 100;
-
-            &--up {
-                justify-content: flex-start;
-                background: seagreen;
-            }
-
-            &--down {
-                justify-content: flex-end;
-                background: orangered;
-            }
-        }
-    }
+  }
 }

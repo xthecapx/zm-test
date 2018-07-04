@@ -1,63 +1,88 @@
-$component: '.app-header-card';
+@import "./src/vars.scss";
+@import "./src/mixins.scss";
+
+$component: ".app-header-card";
 $thumbs_height: 80px;
 
 #{$component} {
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+
+  @include for-size(tablet-landscape-up) {
     position: absolute;
-    top: 176px;
-    left: 133px;
+    top: 40px;
+    left: 0;
     width: 39%;
     max-height: 500px;
-    text-align: left;
+  }
 
-    &__content {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 2em 2em 1.8em;
+  &__content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2em 2em 1.8em;
+    color: white;
 
-        &__title {
-            font-size: 3.6em;
-            letter-spacing: 1.5px;
-        }
-    
-        &__description {
-            line-height: 1.2;
-            font-size: 1.3em;
-            letter-spacing: 1px;
-        }
-    
-        &__more {
-            margin-bottom: 2.4em;
-            display: block;
-            text-decoration: underline;
-        }
-    
-        &__question {
-            font-size: 1.3em;
-            letter-spacing: 0.3px;
-        }
+    &__title {
+      font-size: 2.6em;
+      letter-spacing: 1.5px;
+
+      @include for-size(tablet-landscape-up) {
+        font-size: 3.6em;
+      }
     }
 
-    &__thumbs {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        height: $thumbs_height;
-
-        &__icon {
-            flex: 1;
-            font-size: 45px;
-            height: 100%;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-
-            &--bg-green {
-                background:rgba(0, 0, 255, 0.3);
-            }
-
-            &--bg-orange {
-                background: rgba(100, 100, 0, 0.3);
-            }
-        }
+    &__description {
+      line-height: 1.2;
+      font-size: 1.3em;
+      letter-spacing: 1px;
     }
+
+    &__more {
+      margin-bottom: 2.4em;
+      display: block;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &__text {
+        font-size: 0.9em;
+      }
+
+      &__icon {
+        margin-right: 0.5em;
+        font-size: 0.8em;
+      }
+    }
+
+    &__question {
+      font-size: 1.3em;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    height: $thumbs_height;
+
+    &__icon {
+      flex: 1;
+      font-size: 45px;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+
+      &--bg-green {
+        background: $background-green-transparent;
+      }
+
+      &--bg-orange {
+        background: $background-orange-transparent;
+      }
+    }
+  }
 }

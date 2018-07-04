@@ -1,23 +1,26 @@
 <div class="app-header-card">
   <div class="app-header-card__content">
     <div class="app-header-card__content__disclaimer">
-        What's your opinion on
+        {{ config?.disclaimer }}
       </div>
       <div class="app-header-card__content__title">
-        Pope Francis?
+        {{ config?.title }}
       </div>
       <p class="app-header-card__content__description">
-        He's talking tough on clery sexual abuse, but he just another papal pervert protector? (thumbs down) or true pedophile punishing pontiff? )(thumbs up)
+        {{ config?.description }}
       </p>
       <a class="app-header-card__content__more">
-        More information
+        <i class="app-header-card__content__more__icon fab fa-wikipedia-w"></i>
+        <span class="app-header-card__content__more__text">More information</span>
       </a>
       <div class="app-header-card__content__question">
-        What's Your Veredict?
+        {{ config?.question }}
       </div>
   </div>
   <div class="app-header-card__thumbs">
-    <div class="app-header-card__thumbs__icon app-header-card__thumbs__icon--bg-green material-icons">thumb_up</div>
-    <div class="app-header-card__thumbs__icon app-header-card__thumbs__icon--bg-orange material-icons">thumb_down</div>
+    <div class="app-header-card__thumbs__icon app-header-card__thumbs__icon--bg-green material-icons"
+         (click)="updateFeaturedPostRate('likes')">thumb_up</div>
+    <div class="app-header-card__thumbs__icon app-header-card__thumbs__icon--bg-orange material-icons"
+         (click)="updateFeaturedPostRate('dislikes')">thumb_down</div>
   </div>
 </div>

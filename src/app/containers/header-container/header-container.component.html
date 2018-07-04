@@ -1,5 +1,9 @@
-<div class="app-header-container">
-  <app-header></app-header>
-  <app-header-card></app-header-card>
-  <app-days-countdown></app-days-countdown>
+<div class="app-header-container" [style.background-image]="featured?.background">
+  <div class="app-header-container__content">
+      <app-header></app-header>
+      <ng-container *ngFor="let featured of featured$ | async">
+        <app-header-card [config]="featured"></app-header-card>
+        <app-days-countdown [config]="{closingDate: featured.closingDate, creationDate: featured.creationDate}"></app-days-countdown>
+      </ng-container>
+  </div>
 </div>

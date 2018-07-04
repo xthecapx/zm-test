@@ -1,39 +1,64 @@
-@import './src/vars.scss';
+@import "./src/vars.scss";
+@import "./src/mixins.scss";
 
-$component: '.app-header';
+$component: ".app-header";
 
 #{$component} {
+  align-items: center;
+  display: flex;
+  height: 115px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  width: 100%;
+  flex-direction: column;
+
+  @include for-size(tablet-portrait-up) {
+    flex-direction: row;
+  }
+
+  &__title {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__menu {
     align-items: center;
     display: flex;
-    height: 115px;
-    text-align: center;
-    max-width: $max-width;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: flex-end;
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    &__title {
-        flex: 1;
-        text-align: left;
-        padding-left: 1em;
+    @include for-size(tablet-portrait-up) {
+      padding: 0.5em 1.6em;
+      flex: 2;
     }
 
-    &__menu {
-        align-items: center;
-        display: flex;
-        justify-content: flex-end;
-        flex: 2;
-        list-style: none;
+    &__option {
+      padding: 0.5em 0.1em;
+      cursor: pointer;
 
-        &__option {
-            padding: 0.5em 1.6em;
-        }
+      @include for-size(tablet-portrait-up) {
+        padding: 0.5em 1.6em;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__search-box {
+    padding: 0.6em 1em 0em;
+
+    @include for-size(phone-only) {
+      display: none;
     }
 
-    &__search-box {
-        padding: 0.6em 1em 0em;
-
-        &__icon {
-            font-size: 40px;
-        }
+    &__icon {
+      font-size: 40px;
     }
+  }
 }
