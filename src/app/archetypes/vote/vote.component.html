@@ -2,7 +2,7 @@
     <div class="app-vote__result material-icons">thumb_up</div>
     <div class="app-vote__title"> {{ config?.person }} </div>
     <div class="app-vote__subtitle">
-      <span class="app-vote__subtitle__main">1 month ago </span> 
+      <span class="app-vote__subtitle__main">1 month ago </span>
       <span class="app-vote__subtitle__normal">{{ config?.tag }}</span>
     </div>
     <div class="app-vote__description">
@@ -10,18 +10,21 @@
     </div>
     <div class="app-vote__actions" [id]="config?.id">
       <div class="app-vote__actions__action app-vote__actions__action--up app-vote__actions__action--active material-icons"
-           (click)="updateLikes(config)">thumb_up</div>
-      <div class="app-vote__actions__action app-vote__actions__action--down material-icons">thumb_down</div>
+           (click)="updatePostRate(config, 'likes')">thumb_up</div>
+      <div class="app-vote__actions__action app-vote__actions__action--down material-icons"
+           (click)="updatePostRate(config, 'dislikes')">thumb_down</div>
       <div class="app-vote__actions__submit">Vote now</div>
     </div>
 </div>
 <div class="app-vote__preview">
   <div class="app-vote__preview__item app-vote__preview__item--up">
-    <div class="app-vote__preview__item__icon material-icons">thumb_up</div>
+    <div class="app-vote__preview__item__icon material-icons"
+         (click)="updatePostRate(config, 'likes')">thumb_up</div>
     <div class="app-vote__actions__item__results">64%</div>
   </div>
   <div class="app-vote__preview__item app-vote__preview__item--down">
       <div class="app-vote__actions__item__results">36%</div>
-      <div class="app-vote__preview__item__icon material-icons">thumb_down</div>
+      <div class="app-vote__preview__item__icon material-icons"
+           (click)="updatePostRate(config, 'dislikes')">thumb_down</div>
     </div>
 </div>
