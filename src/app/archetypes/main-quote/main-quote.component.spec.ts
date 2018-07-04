@@ -1,16 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
+import { Subscription } from "rxjs";
+import { MainQuoteComponent } from "./main-quote.component";
 
-import { MainQuoteComponent } from './main-quote.component';
-
-describe('MainQuoteComponent', () => {
+describe("SubmitNameComponent", () => {
   let component: MainQuoteComponent;
   let fixture: ComponentFixture<MainQuoteComponent>;
+  let subs: Subscription[] = [];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainQuoteComponent ]
-    })
-    .compileComponents();
+      declarations: [MainQuoteComponent],
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +21,7 @@ describe('MainQuoteComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create the MainQuoteComponent", () => {
     expect(component).toBeTruthy();
   });
 });

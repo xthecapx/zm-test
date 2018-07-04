@@ -15,6 +15,7 @@ export class DaysCountdownComponent implements OnInit {
   ngOnInit(): void {
     this.calculateProgressBar();
   }
+
   public calculateProgressBar() {
     const close = new Date(this.config.closingDate);
     const creation = new Date(this.config.creationDate);
