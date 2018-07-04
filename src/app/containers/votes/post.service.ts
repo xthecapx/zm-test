@@ -12,6 +12,7 @@ export class PostService {
   private dbPath = "/post";
   public posts$: Observable<Post[]>;
   public postCollectionRef: AngularFirestoreCollection<Post>;
+  private _userVote = {};
 
   constructor(db: AngularFirestore) {
     this.postCollectionRef = db.collection<Post>(this.dbPath);
@@ -26,6 +27,14 @@ export class PostService {
 
   public getPostList(): Observable<DocumentChangeAction<Post>[]> {
     return this.postCollectionRef.snapshotChanges();
+  }
+
+  public setUserVote(key, status) {
+    this._userVote[key] = status;
+  }
+
+  public getUserVoteStatus() {
+    return this._userVote;
   }
 
   private handleError(error) {

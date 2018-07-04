@@ -8,33 +8,55 @@ import { Post } from "src/app/containers/votes/post.model";
   styleUrls: ["./vote.component.scss"]
 })
 export class VoteComponent implements OnInit {
-  @Input() config;
+  public active: string;
+  public userVote: boolean;
+  public percentages: {
+    total: number;
+    likes: number;
+    dislikes: number;
+  };
+  @Input() config: Post;
 
   constructor(private postService: PostService) {}
 
-  ngOnInit() {}
-
-  public updateLikes(post: Post) {
-    const updatedObject = {
-      likes: ++post.likes
-    };
-
-    this.postService.updatePost(post.id, updatedObject);
+  ngOnInit() {
+    this._calculatePercentage();
+    this.userVote = this.postService.getUserVoteStatus()[this.config.id];
   }
 
-  public updateDislikes(post: Post) {
-    const updatedObject = {
-      likes: ++post.likes
-    };
-
-    this.postService.updatePost(post.id, updatedObject);
+  public actionClicked(key: string) {
+    this.active = key;
   }
 
-  public updatePostRate(post: Post, key: string) {
+  public vote(): void {
+    if (this.active) {
+      this.updatePostRate(this.active);
+      this.postService.setUserVote(this.config.id, true);
+    }
+  }
+
+  public voteAgain(): void {
+    this.userVote = false;
+    this.postService.setUserVote(this.config.id, false);
+  }
+
+  public updatePostRate(key: string) {
     const updatedObject = {
-      [key]: ++post[key]
+      [key]: ++this.config[key]
     };
 
-    this.postService.updatePost(post.id, updatedObject);
+    this.postService.updatePost(this.config.id, updatedObject);
+  }
+
+  private _calculatePercentage() {
+    const total = this.config.likes + this.config.dislikes;
+    const likes = (this.config.likes / total) * 100;
+    const dislikes = 100 - likes;
+
+    this.percentages = {
+      total: total,
+      likes: likes,
+      dislikes: dislikes
+    };
   }
 }

@@ -22,7 +22,6 @@ export class DaysCountdownComponent implements OnInit {
     const finishDays = this.dateDiffInDays(new Date(), close);
     const daysWidth = (finishDays / totalDuration) * 100;
 
-    debugger;
     this.finishDays = finishDays;
     this.daysWidth = daysWidth;
   }
