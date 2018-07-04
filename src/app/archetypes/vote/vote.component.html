@@ -1,5 +1,8 @@
 <div class="app-vote__content">
-    <div class="app-vote__result material-icons">thumb_up</div>
+    <div *ngIf="config.likes >= config.dislikes"
+         class="app-vote__result app-vote__result--green material-icons">thumb_up</div>
+    <div *ngIf="config.likes < config.dislikes"
+         class="app-vote__result app-vote__result--orange material-icons">thumb_down</div>
     <div class="app-vote__title"> {{ config?.person }} </div>
     <div class="app-vote__subtitle">
       <span class="app-vote__subtitle__main">1 month ago </span>

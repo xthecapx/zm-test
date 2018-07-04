@@ -24,7 +24,14 @@ $component: ".app-vote";
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $background-green;
+
+    &--green {
+      background: $background-green;
+    }
+
+    &--orange {
+      background: $background-orange;
+    }
   }
 
   &__title {
