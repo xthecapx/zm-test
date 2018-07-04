@@ -7,11 +7,9 @@ import { HeaderContainerService } from "src/app/containers/header-container/head
   templateUrl: "./header-card.component.html",
   styleUrls: ["./header-card.component.scss"]
 })
-export class HeaderCardComponent implements OnInit {
+export class HeaderCardComponent {
   @Input() config: FeaturedPostModel;
   constructor(private headerContainerService: HeaderContainerService) {}
-
-  ngOnInit() {}
 
   public updateFeaturedPostRate(key: string) {
     const updatedObject = {

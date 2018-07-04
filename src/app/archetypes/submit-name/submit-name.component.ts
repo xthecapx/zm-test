@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-submit-name',
-  templateUrl: './submit-name.component.html',
-  styleUrls: ['./submit-name.component.scss']
+  selector: "app-submit-name",
+  templateUrl: "./submit-name.component.html",
+  styleUrls: ["./submit-name.component.scss"]
 })
-export class SubmitNameComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class SubmitNameComponent {}
